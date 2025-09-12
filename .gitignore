@@ -1,0 +1,25 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json.*.bak
+
+# Build & cache
+dist/
+build/
+.vite/
+.cache/
+.parcel-cache/
+coverage/
+
+# Env & local config
+.env
+.env.*
+!.env.example
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
