@@ -1,5 +1,11 @@
+// file name : promise.js
 // fetchData sẽ trả về Promise
 
+/**
+ * Mô phỏng hàm fetchData bất đồng bộ
+ * lấy dữ liệu và trả về Promise
+ * @returns {Promise<Object>}
+ */
 function fetchData() {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -9,7 +15,12 @@ function fetchData() {
   });
 }
 
-// processData sẽ trả về Promise
+/**
+ * Mô phỏng hàm processData bất đồng bộ
+ * xử lý dữ liệu và trả về Promise
+ * @param {Object} data 
+ * @returns {Promise<Object>}
+ */
 function processData(data) {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -19,7 +30,11 @@ function processData(data) {
   });
 }
 
-// saveData sẽ trả về Promise
+/**
+ * 
+ * @param {Object} data 
+ * @returns {Promise<void>}
+ */
 function saveData(data) {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -29,7 +44,7 @@ function saveData(data) {
   });
 }
 
-// Sử dụng Promise để gọi các hàm bất đồng bộ
+// Sử dụng chuỗi Promise để thực hiện các thao tác bất đồng bộ tuần tự
 fetchData()
   .then((data) => {  // data nhận được từ resolve của fetchData, sau then phải là 1 hàm callback
     console.log("Data fetched:", data);
@@ -37,10 +52,10 @@ fetchData()
   })
   .then((data) => {
     console.log("Data processed:", data);
-    return saveData(data); // trả về promise
+    return saveData(data); // trả về promise -> then xử lý
   })
   .then(() => {
-    console.log("All operations completed.");
+    console.log("All operations completed."); // Kết thúc chuỗi Promise
   })
   .catch((error) => {
     console.error("An error occurred:", error); // Xử lý lỗi nếu có
