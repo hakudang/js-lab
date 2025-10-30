@@ -124,3 +124,9 @@ console.log("Tất cả điểm đều đạt:", allPassing); // false
 // Kiểm tra ít nhất một phần tử theo điều kiện
 let anyPerfect = scores.some(score => score === 10);
 console.log("Có điểm tuyệt đối:", anyPerfect); // true
+
+// các hàm không mutate mảng gốc: concat, slice, map, filter, reduce, forEach, indexOf, find, findIndex, includes
+// map tạo mảng mới bằng cách biến đổi từng phần tử
+let doubledScores = scores.map(score => score * 2);
+console.log("Điểm nhân đôi:", doubledScores); // [6, 18, 14, 20]
+console.log("Mảng gốc:", scores); // [3, 9, 7, 10]
