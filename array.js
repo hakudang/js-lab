@@ -46,12 +46,12 @@ for ( const value of arr ) {
     console.log(value); // 1, 2, 99, 4, 5
 }
 
-// Sử dụng for index
+// Sử dụng for index , không khuyến khích dùng for in cho mãng vì thứ tự không đảm bảo dễ lỗi.
 for ( const index in arr ) {
     console.log(arr[index]); // 1, 2, 99, 4, 5
 }
 
-// Sử dụng forEach
+// Sử dụng forEach, không hỗ trợ break/continue
 arr.forEach(value => console.log(value)); // 1, 2, 99, 4, 5
 
 // Sao chép mảng
